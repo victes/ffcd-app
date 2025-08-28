@@ -518,7 +518,7 @@ h4 {
   .header__nav.active {
     display: block;
   }
-  .header__nav h3 {
+  .header__nav h2 {
     margin-bottom: 20px;
   }
 }
@@ -564,6 +564,7 @@ h4 {
   display: flex;
   justify-content: start;
   align-items: end;
+  flex-wrap: wrap;
   gap: 20px;
 }
 .header__contacts-mobile a {
@@ -582,6 +583,9 @@ h4 {
   background: url("/images/icons/phone-light.svg") center center no-repeat;
   width: 24px;
   aspect-ratio: 1;
+}
+.header__phone-mobile {
+  background: url("/images/icons/phone.svg") center center no-repeat;
 }
 .header__button {
   padding: 0;
