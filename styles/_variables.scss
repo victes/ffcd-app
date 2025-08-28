@@ -1,0 +1,29 @@
+:root {
+  --color-dark: #1a1a1a;
+  --color-light: #ffffff;
+  --color-gray: #666666;
+  --color-light-gray: #999999;
+  --color-green: #c7f241;
+  --color-gradient: linear-gradient(180deg, #9ec817 0%, #c7f241 100%);
+  --color-gray-bg: #f2f2f2;
+  --color-light-gray-bg: #fcfcfc;
+
+  --border-hover: 2px solid var(--color-green);
+
+  --transition-duration: 0.2s;
+
+  --container-width: 1320px;
+  --container-padding-x: 24px;
+
+  --font-family-base: 'Poppins', sans-serif;
+  --font-weight-base: 300;
+  --font-weight-menu: 500;
+
+  --font-size-menu: 17px;
+  --line-heigt-menu: 1.29;
+
+  --font-size-base: 15px;
+  --font-size-base-mb: 14px;
+  --line-heigt-base: 1.6;
+  --line-heigt-base-mb: 1.71;
+}

@@ -1,0 +1,36 @@
+.input {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-light);
+  border-radius: 50px;
+  background: var(--color-light);
+  overflow: hidden;
+  max-height: 53px;
+  transition-duration: 350ms;
+
+  @include tablet {
+    max-height: 46px;
+  }
+
+  input {
+    color: var(--color-dark);
+    flex: 1;
+    padding: 22px;
+    border: none;
+    outline: none;
+    @include tablet {
+      padding-right: 18px;
+    }
+  }
+
+  button {
+    @include reset-button;
+    padding: 15px 16px;
+    cursor: pointer;
+  }
+
+  &.active {
+    border-radius: 20px 20px 0 0;
+    border-bottom: 1px solid var(--color-dark);
+  }
+}

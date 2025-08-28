@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FFCD app</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+<header
+    class="header"
+    x-data="{ showMenu: false, scrolled: false }"
+    :class="{ 'dark': showMenu || scrolled }"
+    @scroll.window="scrolled = (window.scrollY > 20)"
+>
+    <div class="header__inner">
+        <img src="./images/logo.svg" width="153" height="61" alt="FFCD" loading="lazy">
+        <nav class="header__nav" :class="{ active: showMenu }">
+            <h2 class="visible-tablet">Navigation</h2>
+            <ul class="header__menu">
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="#">How it works</a>
+                </li>
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="#">About us</a>
+                </li>
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="#">What we buy</a>
+                </li>
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="#">Must-know</a>
+                </li>
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="#">Locations</a>
+                </li>
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="#">Moving Assistance</a>
+                </li>
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="#">FAQ</a>
+                </li>
+            </ul>
+            <div class="header__contacts-mobile visible-tablet">
+                <a href="tel:777777777" class="header__phone">888-713-9158</a>
+                <button class="button header__call">Get an offer</button>
+            </div>
+        </nav>
+
+        <div class="header__contacts hidden-tablet">
+            <a href="tel:777777777" class="header__phone">888-713-9158</a>
+            <button class="button header__call">Get an offer</button>
+        </div>
+        
+        <button class="header__button visible-tablet" @click="showMenu = !showMenu" :class="{ 'active': showMenu }">
+            <img src="./images/icons/menu-green.svg" alt="" width="24" height="24" loading="lazy" x-show="!showMenu">
+            <img src="./images/icons/x.svg" alt="" width="24" height="24" loading="lazy" x-show="showMenu">
+        </button>
+    </div>
+</header>
+<main class="main">
+    <section class="section">
+        <div class="section__body container">
+            <div class="hero">
+                <div class="hero__content">
+                    <h1 class="hero__title">
+                        Sell My House Fast in Jacksonville, FL — <span class="green">We Buy Houses in Your Area</span>
+                    </h1>
+                    <ul class="hero__list hidden-tablet">
+                        <li class="hero__item">
+                            <img src="./images/icons/plus-light.svg" alt="" width="16" height="16" loading="lazy">
+                            Quick Cash Offer
+                        </li>
+                        <li class="hero__item">
+                            <img src="./images/icons/plus-light.svg" alt="" width="16" height="16" loading="lazy">
+                            No Realtor Commissions
+                        </li>
+                        <li class="hero__item">
+                            <img src="./images/icons/plus-light.svg" alt="" width="16" height="16" loading="lazy">
+                            No Closing Costs
+                        </li>
+                        <li class="hero__item">
+                            <img src="./images/icons/plus-light.svg" alt="" width="16" height="16" loading="lazy">
+                            We buy AS-IS
+                        </li>
+                        <li class="hero__item">
+                            <img src="./images/icons/plus-light.svg" alt="" width="16" height="16" loading="lazy">
+                            Complete Transaction Security
+                        </li>
+                        <li class="hero__item">
+                            <img src="./images/icons/plus-light.svg" alt="" width="16" height="16" loading="lazy">
+                            Hassle-Free Process
+                        </li>
+                    </ul>
+                    <ul class="hero__list visible-tablet">
+                        <li class="hero__item">
+                            <img src="./images/icons/plus-light.svg" alt="" width="16" height="16" loading="lazy">
+                            Quick Cash Offer
+                        </li>
+                        <li class="hero__item">
+                            <img src="./images/icons/plus-light.svg" alt="" width="16" height="16" loading="lazy">
+                            No Realtor Commissions
+                        </li>
+                        <li class="hero__item">
+                            <img src="./images/icons/plus-light.svg" alt="" width="16" height="16" loading="lazy">
+                            No Closing Costs
+                        </li>
+                        <li class="hero__item">
+                            <img src="./images/icons/plus-light.svg" alt="" width="16" height="16" loading="lazy">
+                            Transaction Security
+                        </li>
+                        <li class="hero__item">
+                            <img src="./images/icons/plus-light.svg" alt="" width="16" height="16" loading="lazy">
+                            We buy AS-IS
+                        </li>
+                        <li class="hero__item">
+                            <img src="./images/icons/plus-light.svg" alt="" width="16" height="16" loading="lazy">
+                            Hassle-Free Process
+                        </li>
+                    </ul>
+                </div>
+                <form action="" class="form-order hero__form">
+                    <div class="form-order__head">
+                        <p class="form-order__text">Selling Your House in Jacksonville, Fl?</p>
+                        <h2 class="form-order__title">Get a Cash Offer Today</h2>
+                    </div>
+                    <div class="form-order__divider"></div>
+                    <div class="form-order__body" x-data="{ search: '' }">
+                        <div class="input form-order__input" :class="{ 'active': search.length > 0 }">
+                            <label for="search" class="visually-hidden">Enter your home address</label>
+                            <input
+                             id="search" type="text"
+                             placeholder="Enter your home address"
+                             x-model="search"
+                            >
+                            <button type="button" class="form-order__button">
+                                <img src="./images/icons/search.svg" alt="" loading="lazy">
+                            </button>
+                        </div>
+                        <ul class="form-order__suggestions" x-show="search.length > 0" x-transition.duration.300ms>
+                            <li><span>Southwest 152 Street, </span><strong>Florida</strong>, USA</li>
+                            <li><strong>152</strong> Street, <strong>Florida</strong>, USA</li>
+                            <li><strong>152</strong> Street, <strong>Florida</strong>, USA</li>
+                        </ul>
+                    </div>
+                    <div class="form-order__divider"></div>
+                    <div class="form-order__footer">
+                        <button type="submit" class="button button_gradient form-order__button">
+                            Get a cash offer
+                        </button>
+                        <p class="form-order__privacy">
+                            By clicking, you consent to data processing per our <a class="green underline" href="#">privacy policy</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="section container">
+        <div class="section__head">
+            <h2 class="section__title">How to Sell Home Fast</h2>
+        </div>
+        <div class="section__body container">
+
+        </div>
+    </section>
+</main>
+<footer class="footer">
+
+</footer>
+</body>
+</html>

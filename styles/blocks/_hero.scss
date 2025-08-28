@@ -1,0 +1,128 @@
+.hero {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100px + 650px);
+    background: url("../../images/hero.png") no-repeat top center;
+    background-size: cover;
+    z-index: -1;
+
+    @include tablet {
+      height: calc(100px + 800px);
+    }
+
+    @include mobile {
+      height: calc(100px + 850px);
+    }
+  }
+
+  display: flex;
+  gap: 66px;
+  color: var(--color-light);
+
+  @include desktop-sm {
+    gap: 20px;
+  }
+
+  @include tablet {
+    flex-direction: column;
+    align-items: center;
+    gap: 37px;
+  }
+
+  &__content {
+    @include tablet-above {
+      padding-top: 86px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+
+    @include tablet {
+      margin-bottom: 28px;
+      text-align: center;
+      max-width: 450px;
+    }
+    @include mobile {
+      max-width: 390px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 14px;
+    font-size: 14px;
+
+    @include desktop-sm-above {
+      grid-template-columns: repeat(3, auto);
+      row-gap: 12px;
+      column-gap: 0;
+      @include bg-blur;
+      border-radius: 20px;
+      padding: 24px 25px;
+      font-size: 16px;
+    }
+
+    @include desktop-sm {
+      width: fit-content;
+      column-gap: 24px;
+      font-weight: 300;
+    }
+
+    @include tablet {
+      margin: auto;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+
+    @include desktop-sm {
+      &:before {
+        content: '';
+        @include square(6px);
+        background: var(--color-green);
+        border-radius: 100%;
+      }
+      & img {
+        display: none;
+      }
+    }
+
+    @include desktop-sm-above {
+      position: relative;
+
+      & img {
+        border-radius: 100%;
+        border: 1px solid var(--color-light);
+        @include square(34px);
+        padding: 9px;
+      }
+
+      &:not(:nth-child(3)):not(:nth-child(6))::after {
+        content: "";
+        position: absolute;
+        top: -10%;
+        right: 0;
+        width: 1px;
+        height: 135%;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      &:not(:nth-child(3)):not(:nth-child(6)) {
+        padding-right: 21px;
+      }
+      &:not(:nth-child(1)):not(:nth-child(4)) {
+        padding-left: 21px;
+      }
+    }
+  }
+}

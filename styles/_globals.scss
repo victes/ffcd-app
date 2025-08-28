@@ -1,0 +1,69 @@
+body {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-dark);
+  background-color: var(--color-light);
+
+  @include tablet {
+    font-size: var(--font-size-base-mb);
+    line-height: var(--line-heigt-base-mb);
+  }
+}
+
+main {
+  min-height: 100vh;
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  @include reset-link
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+}
+
+h1 {
+  @include fluid-text(60, 34);
+  line-height: 1.17;
+
+  @include mobile {
+    line-height: 1.15;
+  }
+}
+
+h2 {
+  @include fluid-text(42, 30);
+  line-height: 1.19;
+
+  @include mobile {
+    line-height: 1.1;
+  }
+}
+
+h3 {
+  @include fluid-text(34, 24);
+  line-height: 1.06;
+
+  @include mobile {
+    line-height: 1.17;
+  }
+}
+
+h4 {
+  @include fluid-text(24, 20);
+  line-height: 1.25;
+
+  @include mobile {
+    line-height: 1.7;
+  }
+}
